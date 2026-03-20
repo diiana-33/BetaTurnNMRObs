@@ -26,5 +26,5 @@ if __name__ == '__main__':
             df_results = pd.concat([df_results, df_tmp])
 
     df_results.rename({"pdb": "time_ns"}, axis=1, inplace=True)
-    for beta_turn_name, df_beta_turn in df_results.groupby("aa1234"):
+    for beta_turn_name, df_beta_turn in df_results.groupby("aa4"):
         df_beta_turn.to_csv(os.path.join(args.output_directory, f"{beta_turn_name}.csv"), index=False)
